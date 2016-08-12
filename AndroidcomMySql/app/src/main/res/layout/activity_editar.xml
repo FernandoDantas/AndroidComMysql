@@ -31,9 +31,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="SALVAR"
-        android:id="@+id/btnCadastro"
+        android:id="@+id/btnAtualizar"
         android:layout_marginTop="24dp"
         android:layout_below="@+id/txvEmail"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Apagar"
+        android:id="@+id/btnApagar"
+        android:layout_below="@+id/btnAtualizar"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

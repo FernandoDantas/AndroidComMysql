@@ -1,11 +1,10 @@
 <?php	
-	$nome = $_POST["nome"];
-	$email = $_POST["email"];
+	$codigo = $_POST["codigo"];	
 
 	$conn = new mysqli("localhost", "root", "", "android");
-	$sql = "INSERT INTO clientes (nome,email) VALUES (?, ?)";
+	$sql = "DELETE FROM clientes WHERE id = ?";
 	$stm = $conn->prepare($sql);
-	$stm->bind_param("ss", $nome, $email);
+	$stm->bind_param("i", $codigo);
 	
 	if ($stm->execute()){
 		$retorno = array("retorno" => "YES");

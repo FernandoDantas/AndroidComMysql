@@ -1,11 +1,12 @@
 <?php	
+	$codigo = $_POST["codigo"];
 	$nome = $_POST["nome"];
 	$email = $_POST["email"];
 
 	$conn = new mysqli("localhost", "root", "", "android");
-	$sql = "INSERT INTO clientes (nome,email) VALUES (?, ?)";
+	$sql = "UPDATE clientes SET nome = ?, email = ? WHERE id = ?";
 	$stm = $conn->prepare($sql);
-	$stm->bind_param("ss", $nome, $email);
+	$stm->bind_param("ssi", $nome, $email, $codigo);
 	
 	if ($stm->execute()){
 		$retorno = array("retorno" => "YES");
